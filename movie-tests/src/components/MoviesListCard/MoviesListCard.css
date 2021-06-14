@@ -1,0 +1,53 @@
+.movie {
+  width: 250px;
+  margin: 10px;
+  background-color:#06102e;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  font-size: 15px;
+}
+
+.movie:hover {
+    cursor: pointer;
+}
+
+.movie__img {
+    max-width: 100%;
+    display: block;
+    /* object-fit: cover; */
+    min-height: 375px;
+    /* Пришлось сделать мин-хейт,ибо некоторые постеры были другого размера и получалось криво */
+}
+
+.movie__info {
+    display: flex;
+    padding: 15px;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100px;
+    /* Так же пришлось дать мин-хейт,чтобы title и vote разных фильмов были в одну линию */
+}
+
+.movie__title{
+    margin-right: 10px;
+}
+
+.movie__over {
+    position: absolute;
+    background-color: #fff;
+    color: #02050e;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(100%);
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+}
+
+.movie:hover .movie__over{
+    transform: translateY(0%);
+    /* max-height: 50%; 
+    Как лучше? */
+    overflow: auto;
+}

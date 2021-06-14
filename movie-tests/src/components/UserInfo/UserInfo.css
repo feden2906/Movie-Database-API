@@ -1,0 +1,24 @@
+.user__info {
+    display: flex;
+    align-items: center;
+}
+
+.user__img {
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+    display: block;
+}
+
+.user__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    transition: all .5s linear;
+}
+
+.user__link:hover {
+    color: aquamarine;
+}
+
