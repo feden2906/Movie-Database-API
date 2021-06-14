@@ -1,0 +1,29 @@
+.header {
+    background-color:#06102e;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+.input__search {
+    font-family: inherit;
+    font-size: 16px;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    color: #fff;
+    background-color: transparent;
+    padding: 5px 10px;
+    
+}
+
+.input__search:focus {
+    outline: none;
+}
+
+.input__search::placeholder {
+    color: #fff;
+}
+
+.input__search:focus::placeholder {
+    color: transparent;
+}
