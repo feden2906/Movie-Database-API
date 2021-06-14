@@ -12,27 +12,22 @@ function MovieList() {
   const [movies, setMovies] = useState([]);
   const [searchItem, setSearchItem] = useState("");
 
-  const fetchData = async () => {
-    const response = await fetch(MAIN_API);
+  const fetchData = async (API) => {
+    const response = await fetch(API);
     const data = await response.json();
     setMovies(data.results);
   };
   useEffect(() => {
-    fetchData();
+    fetchData(MAIN_API);
   }, []);
 
-  const fetchDataSearch = async() => {
-    const response = await fetch(SEARCH_API + searchItem);
-    const data = await response.json();
-    setMovies(data.results);
-  }
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
 
-    fetchDataSearch();
+    fetchData(SEARCH_API + searchItem);
 
-    setSearchItem('');
+    setSearchItem("");
   };
 
   const handleOnChange = (e) => {
@@ -41,7 +36,7 @@ function MovieList() {
 
   return (
     <div>
-      <Header />
+      <Header handleOnSubmit={handleOnSubmit} />
       <header>
         <form onSubmit={handleOnSubmit}>
           <input
